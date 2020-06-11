@@ -21,7 +21,7 @@ while True:
         img_tag = content.find('img', {'class': 'product-image-photo'})
         img = img_tag['src'] if img_tag else "N/A"
         price_tag = content.find('span', {'class': 'price'})
-        price = price_tag.text if price_tag else 'N/A'
+        price = price_tag.text[2:] if price_tag else 'N/A'
         watch_no += 1
         watches[watch_no] = [title, name, img, price]
     try:
